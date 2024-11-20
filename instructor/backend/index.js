@@ -9,7 +9,12 @@ import getUserProfile from "./src/routes/userRoutes.js";
 import getCategories from "./src/routes/categoriesRoutes.js";
 
 fastify.register(fastifyCors, {
-  origin: ["http://localhost:3001", "http://127.0.0.1:5500", "https://edubridge-instructor.onrender.com/"], // Allow all origins, or you can specify your frontend URL like 'http://127.0.0.1:5500'
+  origin: [
+    "http://localhost:3001", 
+    "http://127.0.0.1:5500", 
+    "https://edubridge-instructor.onrender.com/",
+    "https://app.netlify.com/sites/edubridge-instructor/"
+  ], // Allow all origins, or you can specify your frontend URL like 'http://127.0.0.1:5500'
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Define allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers needed for authentication
   credentials: true // Allow credentials (i.e., cookies, authorization headers)
