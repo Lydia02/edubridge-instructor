@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadCourses() {
     try {
-        const response = await fetch('http://localhost:3002/api/courses');
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/courses');
         if (!response.ok) throw new Error(`Failed to fetch courses: ${response.statusText}`);
         const courses = await response.json();
 
@@ -31,7 +31,7 @@ async function loadCourses() {
 
 async function loadCategories() {
     try {
-        const response = await fetch('http://localhost:3002/api/categories'); // Adjust API endpoint
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/categories'); // Adjust API endpoint
         if (!response.ok) throw new Error(`Failed to fetch categories: ${response.statusText}`);
         const categories = await response.json();
 
@@ -50,7 +50,7 @@ function openCourseModal(id = null) {
     document.getElementById('modalTitle').innerText = id ? 'Edit Course' : 'Add Course';
 
     if (id) {
-        fetch(`http://localhost:3002/api/courses/${id}`)
+        fetch(`https://edubridge-instructor.onrender.com/api/courses/${id}`)
             .then(response => {
                 if (!response.ok) throw new Error(`Failed to fetch course: ${response.statusText}`);
                 return response.json();
@@ -92,7 +92,7 @@ document.getElementById('courseForm').addEventListener('submit', async function 
         instructorImage: document.getElementById('instructorImage').value,
     };
 
-    const url = id ? `http://localhost:3002/api/courses/${id}` : 'http://localhost:3002/api/courses';
+    const url = id ? `https://edubridge-instructor.onrender.com/api/courses/${id}` : 'https://edubridge-instructor.onrender.com/api/courses';
     const method = id ? 'PUT' : 'POST';
 
     try {
@@ -115,7 +115,7 @@ async function deleteCourse(id) {
     if (!confirm('Are you sure you want to delete this course?')) return;
 
     try {
-        const response = await fetch(`http://localhost:3002/api/courses/${id}`, { method: 'DELETE' });
+        const response = await fetch(`https://edubridge-instructor.onrender.com/api/courses/${id}`, { method: 'DELETE' });
         if (!response.ok) throw new Error(`Failed to delete course: ${response.statusText}`);
         loadCourses();
     } catch (error) {

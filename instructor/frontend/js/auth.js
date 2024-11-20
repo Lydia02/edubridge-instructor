@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Sending signup request with data:", formData);
 
             try {
-                const response = await fetch("http://localhost:3002/signup", {
+                const response = await fetch("https://edubridge-instructor.onrender.com/signup", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData),
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const password = document.querySelector("#password").value.trim();
 
             try {
-                const response = await fetch("http://localhost:3002/login", {
+                const response = await fetch("https://edubridge-instructor.onrender.com/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email, password }),
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         try {
-            const response = await fetch("http://localhost:3002/verify", {
+            const response = await fetch("https://edubridge-instructor.onrender.com/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, code }),

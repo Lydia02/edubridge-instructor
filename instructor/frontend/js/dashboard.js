@@ -50,7 +50,7 @@ async function fetchUserProfile() {
     }
 
     try {
-        const response = await fetch('http://localhost:3002/api/profile', {  // Adjust the URL as necessary
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/profile', {  // Adjust the URL as necessary
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

@@ -139,7 +139,7 @@ async function loadCourses() {
     if (!coursesContainer) return;
 
     try {
-        const response = await fetch('http://localhost:3002/api/courses'); // Adjust the URL based on your server setup
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/courses'); // Adjust the URL based on your server setup
         if (!response.ok) {
             throw new Error('Failed to fetch courses');
         }
@@ -178,7 +178,7 @@ document.getElementById('courseForm').addEventListener('submit', function(event)
 function showCourseModal(courseId = '') {
     if (courseId) {
         // Populate form for editing
-        fetch(`http://localhost:3000/api/courses/${courseId}`)
+        fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`)
             .then(response => response.json())
             .then(course => {
                 document.getElementById('courseId').value = course.id;

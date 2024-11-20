@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Fetch user profile data
-    fetch('http://localhost:3002/api/profile', {
+    fetch('https://edubridge-instructor.onrender.com/api/profile', {
         headers: { 'Authorization': `Bearer ${token}` }
     })
         .then(response => {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const firstName = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
 
-        fetch('http://localhost:3002/api/profile', {
+        fetch('https://edubridge-instructor.onrender.com/api/profile', {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const oldPassword = document.getElementById("oldPassword").value;
         const newPassword = document.getElementById("newPassword").value;
 
-        fetch('http://localhost:3002/api/profile/change-password', {
+        fetch('https://edubridge-instructor.onrender.com/api/profile/change-password', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

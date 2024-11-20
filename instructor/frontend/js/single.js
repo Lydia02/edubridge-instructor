@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     try {
         // Fetch course details from the backend
-        const response = await fetch(`http://localhost:3002/api/courses/${courseId}`);
+        const response = await fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`);
         if (!response.ok) {
             throw new Error("Course not found");
         }
@@ -219,7 +219,7 @@ function showNotification(type, message) {
 // Function to check and update the enrollment button state
 async function updateEnrollmentButton(courseId) {
     try {
-        const response = await fetch('http://localhost:3002/api/enrollments', {
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/enrollments', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -277,7 +277,7 @@ async function enrollInCourse(courseId) {
     }
 
     try {
-        const response = await fetch('http://localhost:3002/api/enroll', {
+        const response = await fetch('https://edubridge-instructor.onrender.com/api/enroll', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -302,7 +302,7 @@ async function enrollInCourse(courseId) {
     if (!courseId) return console.error("Course ID not found");
 
     try {
-        const response = await fetch(`http://localhost:3002/api/courses/${courseId}`);
+        const response = await fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`);
         if (!response.ok) throw new Error("Course not found");
 
         const course = await response.json();
@@ -316,7 +316,7 @@ async function enrollInCourse(courseId) {
             if (!token) return showNotification("Please log in");
 
             try {
-                const enrollResponse = await fetch('http://localhost:3002/api/enroll', {
+                const enrollResponse = await fetch('https://edubridge-instructor.onrender.com/api/enroll', {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ courseId: parseInt(courseId) })
