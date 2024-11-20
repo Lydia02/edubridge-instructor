@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+
   "scripts": {
+    "start": "npm run prisma:generate && nnode prisma/seed.js && node index.js",
+    "prisma:generate": "prisma generate",
     "seed": "node prisma/seed.js",
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
+
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

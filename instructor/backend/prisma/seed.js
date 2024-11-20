@@ -31,12 +31,12 @@ async function main() {
 console.log('Seeding students...');
 
 const students = [
-    { firstName: 'Alice', lastName: 'Johnson', email: 'alice.johnson@example.com', password: await hashPassword('password1'), role: 'student', courses: [{ courseId: 1, progress: 100 }] },
-    { firstName: 'Bob', lastName: 'Smith', email: 'bob.smith@example.com', password: await hashPassword('password2'), role: 'student', courses: [{ courseId: 2, progress: 50 }] },
-    { firstName: 'Carol', lastName: 'Williams', email: 'carol.williams@example.com', password: await hashPassword('password3'), role: 'student', courses: [{ courseId: 3, progress: 100 }] },
-    { firstName: 'David', lastName: 'Jones', email: 'david.jones@example.com', password: await hashPassword('password4'), role: 'student', courses: [{ courseId: 4, progress: 75 }] },
-    { firstName: 'Eva', lastName: 'Brown', email: 'eva.brown@example.com', password: await hashPassword('password5'), role: 'student', courses: [{ courseId: 5, progress: 25 }] },
-    // Add additional students here
+    { firstName: 'Lydia', lastName: 'Ojoawo', email: 'ojoawolydia@gmail.com', password: await hashPassword('password1'), role: 'student', courses: [{ courseId: 1, progress: 100 }] },
+    { firstName: 'Lydia', lastName: 'Ojoawo', email: 'lydiaojoawo11@gmail.com', password: await hashPassword('password2'), role: 'student', courses: [{ courseId: 2, progress: 50 }] },
+    { firstName: 'Adeyemi', lastName: 'Kolade', email: 'yemolee@gmail.com', password: await hashPassword('password3'), role: 'student', courses: [{ courseId: 3, progress: 100 }] },
+    { firstName: 'David', lastName: 'Joyce', email: 'djoyce@gmail.com', password: await hashPassword('password4'), role: 'student', courses: [{ courseId: 4, progress: 75 }] },
+    { firstName: 'Eva', lastName: 'Brown', email: 'evabrown@gmail.com', password: await hashPassword('password5'), role: 'student', courses: [{ courseId: 5, progress: 25 }] },
+
 ];
 
 for (const student of students) {
@@ -80,6 +80,7 @@ console.log('All data seeded successfully!');
           duration: "2 weeks",
           level: "Beginner",
           lectures: 10,
+          students:1,
           enrolledStudents: 0,
           introduction: "This course introduces you to the foundational elements of HTML, teaching you how to structure pages and create interactive elements.",
           instructorImage: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -95,6 +96,7 @@ console.log('All data seeded successfully!');
           duration: "3 weeks",
           level: "Intermediate",
           lectures: 15,
+          students:1,
           enrolledStudents: 0,
           introduction: "This course covers advanced CSS concepts, including flexbox, grid, and responsive design.",
           instructorImage: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -110,6 +112,7 @@ console.log('All data seeded successfully!');
           duration: "4 weeks",
           level: "Beginner",
           lectures: 20,
+          students:1,
           enrolledStudents: 0,
           introduction: "This course covers the basics of JavaScript, including variables, loops, and functions.",
           instructorImage: "https://randomuser.me/api/portraits/women/44.jpg",
@@ -125,6 +128,7 @@ console.log('All data seeded successfully!');
           duration: "6 weeks",
           level: "Beginner",
           lectures: 25,
+          students:1,
           enrolledStudents: 0,
           introduction: "This course introduces you to Python programming and its applications in data science.",
           instructorImage: "https://randomuser.me/api/portraits/women/50.jpg",
@@ -139,6 +143,7 @@ console.log('All data seeded successfully!');
           instructor: "David Smith",
           duration: "8 weeks",
           level: "Advanced",
+          students:1,
           lectures: 30,
           enrolledStudents: 0,
           introduction: "This course covers deep learning concepts using TensorFlow, including neural networks and model building.",
@@ -154,6 +159,7 @@ console.log('All data seeded successfully!');
           instructor: "Mark Zulu",
           duration: "12 weeks",
           level: "Advanced",
+          students:1,
           lectures: 40,
           enrolledStudents: 0,
           introduction: "This course covers both frontend and backend development, including databases and deployment.",
@@ -169,6 +175,7 @@ console.log('All data seeded successfully!');
           instructor: "Lara Croft",
           duration: "5 weeks",
           level: "Intermediate",
+          students:1,
           lectures: 15,
           introduction: "This course covers cloud architecture principles and best practices using AWS.",
           enrolledStudents: 0,
@@ -182,6 +189,7 @@ console.log('All data seeded successfully!');
           price: 150,
           categoryId: 3,
           instructor: "Mohamed Ali",
+          students:1,
           duration: "7 weeks",
           level: "Advanced",
           lectures: 21,
@@ -199,6 +207,7 @@ console.log('All data seeded successfully!');
           instructor: "Sara Connor",
           duration: "9 weeks",
           level: "Beginner",
+          students:1,
           lectures: 18,
           enrolledStudents: 0,
           introduction: "This course covers the fundamentals of cybersecurity, including security principles and threats.",
@@ -214,6 +223,7 @@ console.log('All data seeded successfully!');
           instructor: "Robert Langdon",
           duration: "10 weeks",
           level: "Intermediate",
+          students:1,
           lectures: 25,
           enrolledStudents: 0,
           introduction: "This course covers machine learning algorithms and their implementation using R.",
