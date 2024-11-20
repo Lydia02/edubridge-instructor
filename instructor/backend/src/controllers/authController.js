@@ -9,6 +9,7 @@ import { z } from "zod";
 import { transporter } from "../config/email.js"; 
 import { prisma } from '../../fastify.js';
 
+
 export async function register(request, reply) {
   const { firstName, lastName, email, password, role } = request.body;
 
@@ -35,7 +36,7 @@ export async function login(request, reply) {
     const user = await loginUser(email, password);
 
     if (!user.isVerified) {
-      console.log("User is not verified:", email); // Debugging log
+      console.log("User is not verified:", email); // Debuhgjgging log
       return reply.status(403).send({ error: "Please verify your email to log in." });
     }
 
