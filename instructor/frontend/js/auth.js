@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch("https://edubridge-instructor.onrender.com/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                credentials: true,
+                credentials: include,
                 body: JSON.stringify({ email, code }),
             });
 
