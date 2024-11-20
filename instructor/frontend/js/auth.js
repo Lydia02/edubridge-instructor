@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         verificationSection.style.display = "block";
                     }
                 } else {
-                    console.error("Signup failed:", result); // Debugging log
+                    console.error("Signup failed:", result); // Debugginglog
                     showMessage(result.message || "Signup failed, please try again.");
                 }
             } catch (error) {
