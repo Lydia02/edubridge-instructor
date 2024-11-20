@@ -27,40 +27,6 @@ async function main() {
     }
 
     
-// Continued from seeding courses...
-console.log('Seeding students...');
-
-const students = [
-    { firstName: 'Lydia', lastName: 'Ojoawo', email: 'ojoawolydia@gmail.com', password: await hashPassword('password1'), role: 'student', courses: [{ courseId: 1, progress: 100 }] },
-    { firstName: 'Lydia', lastName: 'Ojoawo', email: 'lydiaojoawo11@gmail.com', password: await hashPassword('password2'), role: 'student', courses: [{ courseId: 2, progress: 50 }] },
-    { firstName: 'Adeyemi', lastName: 'Kolade', email: 'yemolee@gmail.com', password: await hashPassword('password3'), role: 'student', courses: [{ courseId: 3, progress: 100 }] },
-    { firstName: 'David', lastName: 'Joyce', email: 'djoyce@gmail.com', password: await hashPassword('password4'), role: 'student', courses: [{ courseId: 4, progress: 75 }] },
-    { firstName: 'Eva', lastName: 'Brown', email: 'evabrown@gmail.com', password: await hashPassword('password5'), role: 'student', courses: [{ courseId: 5, progress: 25 }] },
-
-];
-
-for (const student of students) {
-  const existingUser = await prisma.user.findUnique({
-      where: { email: student.email },
-  });
-
-  let user;
-  if (!existingUser) {
-      user = await prisma.user.create({
-          data: {
-              firstName: student.firstName,
-              lastName: student.lastName,
-              email: student.email,
-              password: student.password,
-              role: student.role,
-          },
-      });
-  } else {
-      user = existingUser;
-  }
-
-  // Continue with the rest of your script for enrollments and certificates
-}
 
 
 console.log('All data seeded successfully!');
