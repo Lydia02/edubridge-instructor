@@ -39,7 +39,7 @@ model Course {
   level            String?
   category         Category       @relation(fields: [categoryId], references: [id])
   categoryId       Int
-  students         Int
+  students         Int?
   progress         Progress[]
   reviews          Review[]
   certificates     Certificate[]
