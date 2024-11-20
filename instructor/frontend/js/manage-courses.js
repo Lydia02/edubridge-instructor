@@ -68,6 +68,7 @@ function openCourseModal(id = null) {
                 document.getElementById('lectures').value = course.lectures;
                 document.getElementById('enrolledStudents').value = course.enrolledStudents;
                 document.getElementById('instructorImage').value = course.instructorImage;
+                document.getElementById('students').value=course.students;
             })
             .catch(error => console.error('Error fetching course:', error));
     }
@@ -90,6 +91,8 @@ document.getElementById('courseForm').addEventListener('submit', async function 
         lectures: parseInt(document.getElementById('lectures').value),
         enrolledStudents: parseInt(document.getElementById('enrolledStudents').value),
         instructorImage: document.getElementById('instructorImage').value,
+        students: parseInt(document.getElementById('students').value)
+
     };
 
     const url = id ? `https://edubridge-instructor.onrender.com/api/courses/${id}` : 'https://edubridge-instructor.onrender.com/api/courses';
