@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Course" ALTER COLUMN "introduction" DROP NOT NULL,
+ALTER COLUMN "enrolledStudents" DROP NOT NULL,
+ALTER COLUMN "duration" DROP NOT NULL,
+ALTER COLUMN "instructorImage" DROP NOT NULL,
+ALTER COLUMN "level" DROP NOT NULL;

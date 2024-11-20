@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Learning Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+
+<nav class="container-fluid">
+    <ul>
+        <li><strong>E-Learn Dashboard</strong></li>
+    </ul>
+    <ul>
+        <li><a href="#">My Courses</a></li>
+        <li><a href="#">Progress</a></li>
+        <li><a href="#" role="button">Logout</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <div class="grid">
+        <!-- Course Overview Section -->
+        <section>
+            <hgroup>
+                <h2>Your Courses</h2>
+                <h3>Continue Learning</h3>
+            </hgroup>
+            <p>Browse your ongoing courses and pick up where you left off.</p>
+            <figure>
+                <img src="https://source.unsplash.com/featured/?education,learning" alt="Online learning image">
+                <figcaption><a href="https://unsplash.com/" target="_blank">Image Source: Unsplash</a></figcaption>
+            </figure>
+            <h3>Next Lesson</h3>
+            <p>Chapter 5: Advanced Programming Techniques - Duration: 45 mins</p>
+            <h3>Latest Assignment</h3>
+            <p>Submit by Friday: Project Prototype Draft</p>
+        </section>
+        
+        <!-- Progress Tracker Section -->
+        <section>
+            <hgroup>
+                <h2>Progress Tracker</h2>
+                <h3>Your Learning Journey</h3>
+            </hgroup>
+            <p>Track your progress and completed modules.</p>
+            <figure>
+                <img src="https://source.unsplash.com/featured/?progress,analytics" alt="Progress tracking image">
+                <figcaption><a href="https://unsplash.com/" target="_blank">Image Source: Unsplash</a></figcaption>
+            </figure>
+            <h3>Modules Completed</h3>
+            <p>12/15 - You're nearly there!</p>
+            <h3>Current GPA</h3>
+            <p>3.8 - Keep up the good work!</p>
+        </section>
+
+        <!-- Notifications Section -->
+        <section>
+            <hgroup>
+                <h2>Notifications</h2>
+                <h3>Stay Updated</h3>
+            </hgroup>
+            <p>Check for upcoming deadlines and new announcements.</p>
+            <figure>
+                <img src="https://source.unsplash.com/featured/?notifications,alert" alt="Notifications image">
+                <figcaption><a href="https://unsplash.com/" target="_blank">Image Source: Unsplash</a></figcaption>
+            </figure>
+            <h3>Upcoming Exam</h3>
+            <p>Math 101 - Scheduled for Monday at 10 AM</p>
+            <h3>Forum Messages</h3>
+            <p>You have 3 new messages from classmates.</p>
+        </section>
+    </div>
+</main>
+
+<section aria-label="Subscribe for Updates">
+    <div class="container">
+        <article>
+            <hgroup>
+                <h2>Stay Connected</h2>
+                <h3>Subscribe to Updates</h3>
+            </hgroup>
+            <form class="grid">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required>
+                <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+            </form>
+        </article>
+    </div>
+</section>
+
+<footer class="container">
+    <small><a href="#">Help Center</a> • <a href="#">Privacy Policy</a></small>
+</footer>
+
+</body>
+</html>
