@@ -195,7 +195,7 @@ function showCourseModal(courseId = '') {
 function createCourse() {
     const title = document.getElementById('title').value;
     // Gather other field values
-    fetch('http://localhost:3000/api/courses', {
+    fetch('https://edubridge-instructor.onrender.com/api/courses', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ title: title })
@@ -209,7 +209,7 @@ function createCourse() {
 function updateCourse(courseId) {
     const title = document.getElementById('title').value;
     // Gather other field values
-    fetch(`http://localhost:3000/api/courses/${courseId}`, {
+    fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ title: title })
@@ -221,7 +221,7 @@ function updateCourse(courseId) {
 }
 
 function deleteCourse(courseId) {
-    fetch(`http://localhost:3000/api/courses/${courseId}`, {
+    fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`, {
         method: 'DELETE'
     })
     .then(() => {
