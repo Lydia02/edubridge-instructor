@@ -53,8 +53,9 @@ async function fetchUserProfile() {
         const response = await fetch('https://edubridge-instructor.onrender.com/api/profile', {  // Adjust the URL as necessary
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
-            }
+                'Authorization': `Bearer ${token}`,
+            },
+            credentials: "include"
         });
         if (!response.ok) throw new Error(`Failed to fetch profile: ${response.status} ${response.statusText}`);
         return await response.json();

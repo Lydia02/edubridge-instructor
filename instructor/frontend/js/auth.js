@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const response = await fetch("https://edubridge-instructor.onrender.com/signup", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
+                    credentials: "include",
                     body: JSON.stringify(formData),
                 });
 
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const response = await fetch("https://edubridge-instructor.onrender.com/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
+                    credentials: "include",
                     body: JSON.stringify({ email, password }),
                 });
 
@@ -119,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch("https://edubridge-instructor.onrender.com/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: true,
                 body: JSON.stringify({ email, code }),
             });
 

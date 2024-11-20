@@ -198,6 +198,7 @@ function createCourse() {
     fetch('https://edubridge-instructor.onrender.com/api/courses', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
+        credentials: "include",
         body: JSON.stringify({ title: title })
     })
     .then(() => {
@@ -212,6 +213,7 @@ function updateCourse(courseId) {
     fetch(`https://edubridge-instructor.onrender.com/api/courses/${courseId}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
+        credentials: "include",
         body: JSON.stringify({ title: title })
     })
     .then(() => {

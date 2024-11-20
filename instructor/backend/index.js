@@ -10,7 +10,7 @@ import getCategories from "./src/routes/categoriesRoutes.js";
 
 fastify.register(fastifyCors, {
   origin: [
-    "http://localhost:3001", 
+    "http://localhost:3002", 
     "http://127.0.0.1:5500", 
     "https://edubridge-instructor.onrender.com",
     "https://edubridge-instructor.netlify.app"

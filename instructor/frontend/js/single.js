@@ -283,6 +283,7 @@ async function enrollInCourse(courseId) {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             },
+            credentials: "include",
             body: JSON.stringify({ courseId })
         });
 
@@ -319,6 +320,7 @@ async function enrollInCourse(courseId) {
                 const enrollResponse = await fetch('https://edubridge-instructor.onrender.com/api/enroll', {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    credentials: "include",
                     body: JSON.stringify({ courseId: parseInt(courseId) })
                 });
 
