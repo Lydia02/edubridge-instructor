@@ -6,7 +6,7 @@
   "type": "module",
 
   "scripts": {
-    "start": "npm run prisma:generate && nnode prisma/seed.js && node index.js",
+    "start": "node prisma:generate && node prisma/seed.js && node index.js",
     "prisma:generate": "prisma generate",
     "seed": "node prisma/seed.js",
     "dev": "nodemon index.js"
