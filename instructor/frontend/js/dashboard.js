@@ -55,7 +55,6 @@ async function fetchUserProfile() {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
-            credentials: "include"
         });
         if (!response.ok) throw new Error(`Failed to fetch profile: ${response.status} ${response.statusText}`);
         return await response.json();

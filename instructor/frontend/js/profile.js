@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
-            credentials: "include",
+    
             body: JSON.stringify({ firstName, lastName })
         })
             .then(response => {
