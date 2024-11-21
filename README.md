@@ -1,15 +1,15 @@
 # EduBridge Instructor Platform
 
 
-# EduBridge User Website
 
 ## Link to the USER Application
 [EduBridge User Website](https://edubridge-project.netlify.app/)
+---
 
 ## Link to the  INSTRUCTOR Application
 
 [EduBridge Instructor Website](https://edubridge-instructor.netlify.app/)
-
+---
 
 ## Link to the  INSTRUCTOR Github-repo
 
