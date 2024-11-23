@@ -13,7 +13,7 @@
 
 ## Link to the  USER Github-repo
 
-[EduBridge Instructor Repo](https://github.com/Lydia02/edubridge)
+[EduBridge USER Repo](https://github.com/Lydia02/edubridge)
 ---
 
 ## Table of Contents
