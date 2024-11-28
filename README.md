@@ -11,9 +11,9 @@
 [EduBridge Instructor Website](https://edubridge-instructor.netlify.app/)
 ---
 
-## Link to the  INSTRUCTOR Github-repo
+## Link to the  USER Github-repo
 
-[EduBridge Instructor Repo](https://github.com/Lydia02/edubridge-instructor)
+[EduBridge USER Repo](https://github.com/Lydia02/edubridge)
 ---
 
 ## Table of Contents
