@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 const result = await response.json();
-                console.log("Parsed signup response JSON:", result); // Debugging log
+                console.log("Parsed signup response JSON:", result); // Debuggingg log
 
                 if (response.ok) {
                     showMessage("Signup successful! Please check your email for the verification code.", true);
