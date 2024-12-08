@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main # Trigger the workflow on pushes to the main branch
-      workflow_dispatch:
+  workflow_dispatch: # Allows manual runs
 
 jobs:
   sync-database:
@@ -20,26 +20,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the version of Node.js you're using locally
+          node-version: 18 # Adjust based on your local Node.js version
 
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Apply migrations to the online database
+      # Step 4: Apply Prisma migrations to the online database
       - name: Apply Prisma Migrations
         env:
           DATABASE_URL: ${{ secrets.ONLINE_DATABASE_URL }}
         run: npx prisma migrate deploy
 
-        - name: Notify on Failure
+      # Step 5: Notify on failure (Optional)
+      - name: Notify on Failure
         if: failure()
         run: echo "Database migration failed!"
-
-        on:
-          push:
-            branches:
-              - main
-          pull_request:
-            branches:
-              - main
