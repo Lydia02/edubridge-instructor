@@ -3,7 +3,7 @@ name: Prisma Database Sync
 on:
   push:
     branches:
-      - mster # Automatically trigger on pushes to the master branch
+      - master # Automatically trigger on pushes to the master branch
   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
