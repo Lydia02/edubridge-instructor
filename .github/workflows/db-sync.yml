@@ -3,8 +3,8 @@ name: Prisma Database Sync
 on:
   push:
     branches:
-      - main # Trigger on pushes to the main branch
-  workflow_dispatch: # Allow manual triggering of the workflow
+      - main # Trigger the workflow on pushes to the main branch
+  workflow_dispatch: # Allows manual runs
 
 jobs:
   sync-database:
@@ -16,15 +16,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js (Node.js 20 for compatibility)
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 20 # Update to Node.js 20 for compatibility
 
       # Step 3: Install dependencies
       - name: Install Dependencies
-        working-directory: instructor/backend # Adjust to the correct subdirectory
+        working-directory: instructor/backend
         run: npm install
 
       # Step 4: Debug DATABASE_URL
@@ -33,26 +33,21 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: echo "DATABASE_URL is set."
 
-      # Step 5: Validate Prisma schema
+      # Step 5: Validate Prisma Schema
       - name: Validate Prisma Schema
-        working-directory: instructor/backend
-        run: npx prisma validate
-
-      # Step 6: Test Database Connection
-      - name: Test Database Connection
         working-directory: instructor/backend
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx prisma db pull
+        run: npx prisma validate
 
-      # Step 7: Apply Prisma migrations to the online database
+      # Step 6: Apply Prisma migrations to the online database
       - name: Apply Prisma Migrations
         working-directory: instructor/backend
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx prisma migrate deploy
 
-      # Step 8: Notify on failure (Optional)
+      # Step 7: Notify on failure (Optional)
       - name: Notify on Failure
         if: failure()
         run: echo "Database migration failed!"
