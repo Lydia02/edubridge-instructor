@@ -30,3 +30,15 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.ONLINE_DATABASE_URL }}
         run: npx prisma migrate deploy
+
+        - name: Notify on Failure
+        if: failure()
+        run: echo "Database migration failed!"
+
+        on:
+          push:
+            branches:
+              - main
+          pull_request:
+            branches:
+              - main
