@@ -16,23 +16,29 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
+      # Step 2: Change working directory to the backend
+      - name: Change Directory
+        run: cd instructor/backend
+
+      # Step 3: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Adjust based on your local Node.js version
+          node-version: 18 # Adjust based on your Node.js version
 
-      # Step 3: Install dependencies
+      # Step 4: Install dependencies
       - name: Install Dependencies
+        working-directory: instructor/backend # Specify the correct directory
         run: npm install
 
-      # Step 4: Apply Prisma migrations to the online database
+      # Step 5: Apply Prisma migrations to the online database
       - name: Apply Prisma Migrations
+        working-directory: instructor/backend # Specify the correct directory
         env:
           DATABASE_URL: ${{ secrets.ONLINE_DATABASE_URL }}
         run: npx prisma migrate deploy
 
-      # Step 5: Notify on failure (Optional)
+      # Step 6: Notify on failure (Optional)
       - name: Notify on Failure
         if: failure()
         run: echo "Database migration failed!"
