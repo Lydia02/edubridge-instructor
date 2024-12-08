@@ -3,8 +3,8 @@ name: Prisma Database Sync
 on:
   push:
     branches:
-      - main # Trigger the workflow on pushes to the main branch
-  workflow_dispatch: # Allows manual runs
+      - mster # Automatically trigger on pushes to the master branch
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   sync-database:
@@ -20,18 +20,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # Update to Node.js 20 for compatibility
+          node-version: 20 # Use Node.js 20 for compatibility
 
       # Step 3: Install dependencies
       - name: Install Dependencies
         working-directory: instructor/backend
         run: npm install
 
-      # Step 4: Debug DATABASE_URL
+      # Step 4: Debug DATABASE_URL (for verification)
       - name: Debug DATABASE_URL
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: echo "DATABASE_URL is set."
+        run: echo "DATABASE_URL is set and passed to the workflow."
 
       # Step 5: Validate Prisma Schema
       - name: Validate Prisma Schema
@@ -51,3 +51,8 @@ jobs:
       - name: Notify on Failure
         if: failure()
         run: echo "Database migration failed!"
+
+      # Step 8: Confirm success (Optional)
+      - name: Success Message
+        if: success()
+        run: echo "Database migration completed successfully!"
