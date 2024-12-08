@@ -35,7 +35,7 @@ jobs:
       - name: Apply Prisma Migrations
         working-directory: instructor/backend # Specify the correct directory
         env:
-          DATABASE_URL: ${{ secrets.ONLINE_DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx prisma migrate deploy
 
       # Step 6: Notify on failure (Optional)
