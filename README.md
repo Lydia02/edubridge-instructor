@@ -1,5 +1,6 @@
 # EduBridge Instructor Platform
 
+echo "Trigger GitHub Actions" >> README.md
 
 
 ## Link to the USER Application
