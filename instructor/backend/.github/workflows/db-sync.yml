@@ -1,0 +1,32 @@
+name: Prisma Database Sync
+
+on:
+  push:
+    branches:
+      - main # Trigger the workflow on pushes to the main branch
+
+jobs:
+  sync-database:
+    name: Sync Prisma Migrations
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the version of Node.js you're using locally
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Apply migrations to the online database
+      - name: Apply Prisma Migrations
+        env:
+          DATABASE_URL: ${{ secrets.ONLINE_DATABASE_URL }}
+        run: npx prisma migrate deploy
